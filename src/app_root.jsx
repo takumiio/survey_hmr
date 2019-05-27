@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import { hot } from "react-hot-loader";
 
 import React from "react";
 
@@ -22,4 +23,6 @@ const AppRoot = (props) => (
     </div>
   </div>
 );
-export default AppRoot;
+
+export default ( process.env.NODE_ENV === "development" ) ?  hot(module)(AppRoot) : AppRoot;
+
